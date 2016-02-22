@@ -260,7 +260,19 @@ CityofSJApp.controller('RequestController', function($scope, $state, $firebaseAr
         "value": "antigraffiti@sanjoseca.gov"
       };
        $scope.specialValue3 = {
+        "id": "Homeless Outreach",
+        "value": "outreach@homefirstscc.org"
+      };
+       $scope.specialValue4 = {
         "id": "Water Waste",
+        "value": "drought@valleywater.org"
+      };
+       $scope.specialValue5 = {
+        "id": "Abandoned Carts",
+        "value": "TBA"
+      };
+       $scope.specialValue6 = {
+        "id": "Littering",
         "value": "antigraffiti@sanjoseca.gov"
       };
 
