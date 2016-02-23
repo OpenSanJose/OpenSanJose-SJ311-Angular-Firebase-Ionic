@@ -114,20 +114,6 @@ CityofSJApp.controller("CamController", function($scope, $ionicHistory, $firebas
     });
 
 CityofSJApp.controller('MapController', function($scope, $state, $cordovaGeolocation, $firebaseArray, $location, $firebaseObject, $firebase) {
-      
-      $scope.specialValue1 = {
-        "id": "Graffiti",
-        "value": "antigraffiti@sanjoseca.gov"
-      };
-       $scope.specialValue2 = {
-        "id": "Illegal Dumping",
-        "value": "antigraffiti@sanjoseca.gov"
-      };
-       $scope.specialValue3 = {
-        "id": "Water Waste",
-        "value": "antigraffiti@sanjoseca.gov"
-      };
-
       var options = {timeout: 10000, enableHighAccuracy: true};
 
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
@@ -157,23 +143,6 @@ CityofSJApp.controller('MapController', function($scope, $state, $cordovaGeoloca
       },function(error){
         console.log("Could not get location");
         });
-
-    //ngSubmit   
-      $scope.list = [];
-      $scope.text = 'hello';
-      $scope.submit = function() {
-        if ($scope.text) {
-          $scope.list.push(this.text);
-          $scope.text = '';
-        }
-      };
-  //$binding 
-      var ref = new Firebase("https://cityofsjapp.firebaseio.com/");
-  // download the data into a local object
-      var syncObject = $firebaseObject(ref);
-  // synchronize the object with a three-way data binding
-  // click on `index.html` above to see it used in the DOM!
-      syncObject.$bindTo($scope, "data");
 
   var firebaseUrl = "https://cityofsjapp.firebaseio.com/";
   
