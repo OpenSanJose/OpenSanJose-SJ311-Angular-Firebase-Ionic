@@ -49,7 +49,7 @@ CityofSJApp.controller("AuthController", function($scope, $state, $firebaseAuth)
           email: username,
           password: password
         }).then(function(authData) {
-          $state.go("capture");
+          $state.go("camera");
         }).catch(function(error) {
           console.error("ERROR: " + error);
         });
@@ -63,7 +63,7 @@ CityofSJApp.controller("AuthController", function($scope, $state, $firebaseAuth)
           });
 
         }).then(function(authData) {
-          $state.go("capture");
+          $state.go("camera");
         }).catch(function(error) {
           console.error("ERROR: " + error);
         });
