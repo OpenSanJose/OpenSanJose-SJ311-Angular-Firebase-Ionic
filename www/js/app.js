@@ -23,8 +23,8 @@ CityofSJApp.config(function($stateProvider, $urlRouterProvider) {
         
         .state("capture", {
           url: "/capture",
-          templateUrl: "templates/capture.html",
-          controller: "CamController"
+          templateUrl: "templates/camera.html",
+          controller: "CameraController"
         })
         
         .state("locate", {
@@ -35,7 +35,7 @@ CityofSJApp.config(function($stateProvider, $urlRouterProvider) {
 
         .state("last", {
           url: "/last",
-          templateUrl: "templates/last.html",
+          templateUrl: "templates/service.html",
           controller: "RequestController"
         })
 
@@ -71,7 +71,7 @@ CityofSJApp.controller("AuthController", function($scope, $state, $firebaseAuth)
 
       });
 
-CityofSJApp.controller("CamController", function($scope, $ionicHistory, $firebaseArray, $cordovaCamera, $location) {
+CityofSJApp.controller("CameraController", function($scope, $ionicHistory, $firebaseArray, $cordovaCamera, $location) {
   $ionicHistory.clearHistory();
   $scope.images = [];
 
