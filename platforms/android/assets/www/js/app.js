@@ -21,21 +21,21 @@ CityofSJApp.config(function($stateProvider, $urlRouterProvider) {
           cache: false
         })
         
-        .state("capture", {
-          url: "/capture",
-          templateUrl: "templates/capture.html",
-          controller: "CamController"
+        .state("camera", {
+          url: "/camera",
+          templateUrl: "templates/camera.html",
+          controller: "CameraController"
         })
         
-        .state("locate", {
-          url: "/locate",
-          templateUrl: "templates/locate.html",
+        .state("map", {
+          url: "/map",
+          templateUrl: "templates/map.html",
           controller: "MapController"
         })
 
         .state("last", {
           url: "/last",
-          templateUrl: "templates/last.html",
+          templateUrl: "templates/service.html",
           controller: "RequestController"
         })
 
@@ -49,7 +49,7 @@ CityofSJApp.controller("AuthController", function($scope, $state, $firebaseAuth)
           email: username,
           password: password
         }).then(function(authData) {
-          $state.go("capture");
+          $state.go("camera");
         }).catch(function(error) {
           console.error("ERROR: " + error);
         });
@@ -63,7 +63,7 @@ CityofSJApp.controller("AuthController", function($scope, $state, $firebaseAuth)
           });
 
         }).then(function(authData) {
-          $state.go("capture");
+          $state.go("camera");
         }).catch(function(error) {
           console.error("ERROR: " + error);
         });
@@ -71,7 +71,7 @@ CityofSJApp.controller("AuthController", function($scope, $state, $firebaseAuth)
 
       });
 
-CityofSJApp.controller("CamController", function($scope, $ionicHistory, $firebaseArray, $cordovaCamera, $location) {
+CityofSJApp.controller("CameraController", function($scope, $ionicHistory, $firebaseArray, $cordovaCamera, $location) {
   $ionicHistory.clearHistory();
   $scope.images = [];
 
