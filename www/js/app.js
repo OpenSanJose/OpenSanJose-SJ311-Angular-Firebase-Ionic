@@ -21,15 +21,15 @@ CityofSJApp.config(function($stateProvider, $urlRouterProvider) {
           cache: false
         })
         
-        .state("capture", {
-          url: "/capture",
+        .state("camera", {
+          url: "/camera",
           templateUrl: "templates/camera.html",
           controller: "CameraController"
         })
         
-        .state("locate", {
-          url: "/locate",
-          templateUrl: "templates/locate.html",
+        .state("map", {
+          url: "/map",
+          templateUrl: "templates/map.html",
           controller: "MapController"
         })
 
